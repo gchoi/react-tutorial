@@ -1,4 +1,4 @@
-import React, { Component, createElement } from 'react';
+import React, { Component } from 'react';
 
 class Counter extends Component {
     state = {
@@ -6,17 +6,12 @@ class Counter extends Component {
         tags: ['tag1', 'tag2', 'tag3']
     };
 
-    constructor() {
-        super();
-        this.handleIncrement = this.handleIncrement.bind(this);
-    }
-
     renderTags() {
         if (this.state.tags.length === 0) return <p>There are no tags!</p>;
         return <ul>{ this.state.tags.map(tag => <li key={tag}>{ tag }</li>) }</ul>; 
     }
 
-    handleIncrement() {
+    handleIncrement = () => {
         console.log("Increment Clicked", this);
     }
 
